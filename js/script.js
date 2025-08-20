@@ -7,17 +7,18 @@ let currentSource = "all"; // default tampil semua
 
 async function fetchNews() {
     try {
-        // API 1: CurrentsAPI
-        const res1 = await fetch('https://api.currentsapi.services/v1/latest-news?language=en&apiKey=qVIVxTjbrQigESE770Cl7IVHctu3WmXjJTuF8bEEVTKKyN5-');
+        // API 1: NewsData.io
+        const res1 = await fetch('https://newsdata.io/api/1/latest?apikey=pub_ca46450f55bd4399a1cfcdb33aed207e');
         const data1 = await res1.json();
-        const articles1 = data1.news.map(a => ({
+        const articles1 = data1.results.map(a => ({
             title: a.title,
             description: a.description,
-            url: a.url,
-            image: (a.image && a.image !== "None") ? a.image : "https://placehold.co/300x200?text=No+Image",
-            publishedAt: a.published,
-            source: "currentsapi"
+            url: a.link,
+            image: a.image_url,
+            publishedAt: a.pubDate,
+            source: "newsdata"
         }));
+
 
         // API 2: GNews
         const res2 = await fetch('https://gnews.io/api/v4/top-headlines?topic=sports&country=id&apikey=63fb45afed5d4fac6b8c986021d20e7c');
@@ -64,7 +65,7 @@ function renderArticles(articles) {
         card.className = "card";
         card.innerHTML = `
           <div class="image">
-            <img src="${article.image}" alt="News Image">
+            <img src="${article.image || "https://placehold.co/300x200?text=No+Image"}" alt="News Image" onerror="this.src='https://placehold.co/300x200?text=No+Image'">
           </div>
           <div class="desc">
             <a href="${article.url}" target="_blank">${article.title}</a>

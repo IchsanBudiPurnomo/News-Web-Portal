@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Portal</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="title">
+            <h1>News Portal</h1>
+        </div>
+        <div class="search">
+            <input id="searchInput" type="text" placeholder="Search for news...">
+        </div>
+        <!-- tombol filter per API -->
+        <div class="filter-buttons">
+            <button class="active" data-source="all">All News</button>
+            <button data-source="newsapi">NewsAPI</button>
+            <button data-source="gnews">GNews</button>
+            <button data-source="thenewsapi">TheNewsAPI</button>
+        </div>
+    </header>
+
+    <main>
+        <section id="articleContainer"></section>
+    </main>
+    <script src="./js/script.js"></script> 
+</body>
+
+</html>

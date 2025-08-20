@@ -1,0 +1,124 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            width: 100%;
+            max-width: 900px;
+        }
+
+        .title h1 {
+            color: #333;
+            font-size: 2rem;
+        }
+
+        .search {
+            display: flex;
+            gap: 10px;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .search input {
+            flex: 1;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .filter-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .filter-buttons button {
+            padding: 6px 14px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            cursor: pointer;
+            background: #fff;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+
+        .filter-buttons button.active {
+            background: #4285f4;
+            color: white;
+            border-color: #4285f4;
+        }
+
+        main {
+            width: 100%;
+            max-width: 900px;
+        }
+
+        #articleContainer {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .image {
+            width: 100%;
+            height: 160px;
+            overflow: hidden;
+        }
+
+        .image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .desc {
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .desc a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .desc a:hover {
+            color: #4285f4;
+        }
+
+        .meta {
+            font-size: 0.85rem;
+            color: #666;
+        }

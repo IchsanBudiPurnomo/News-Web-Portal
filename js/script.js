@@ -8,7 +8,7 @@ const container = document.getElementById("articleContainer");
         async function fetchNews() {
             try {
                 // API 1: NewsAPI
-                const res1 = await fetch('https://newsapi.org/v2/top-headlines?country=us&apiKey=d22b9c3ff0374b1593d277faec215e6e');
+                const res1 = await fetch('https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=d22b9c3ff0374b1593d277faec215e6e');
                 const data1 = await res1.json();
                 const articles1 = data1.articles.map(a => ({
                     title: a.title,
